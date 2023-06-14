@@ -24,7 +24,7 @@ Prepare Database migration
 npx prisma db push
 
 # DB Seeder
-npm prisma db seed
+npx prisma db seed
 ```
 
 ## Development Server

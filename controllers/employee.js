@@ -30,9 +30,13 @@ controller.getAll = async (req, res, next) => {
 controller.getById = async (req, res, next) => {
     try {
 
+        let id = ''
+        if(req.query.method == 'update') id = Number(req.query.id)
+        else id = req.userId
+
         const data = await prisma.employees.findFirst({
             where : {
-                id : req.userId
+                id : id
             }
         })
 
@@ -87,13 +91,6 @@ controller.create = async (req, res, next) => {
             return res.status(400).send({ 
                 code:"0", 
                 message: "Password wajib di isi!" 
-            })
-        }
-
-        if (!req.body.phone) {
-            return res.status(400).send({ 
-                code:"0", 
-                message: "Telepon wajib di isi!" 
             })
         }
 
@@ -158,6 +155,7 @@ controller.update = async (req, res, next) => {
                     email: req.body.email,
                     password: password,
                     phone: req.body.phone,
+                    roleId: req.body.roleId ? req.body.roleId : req.roleId,
                     updated_by: req.userId,
                 }
             })

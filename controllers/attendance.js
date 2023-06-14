@@ -138,6 +138,13 @@ controller.out = async (req, res, next) => {
             }
         })
 
+        if (!check) {
+            return res.status(500).send({
+                code:"0",
+                message: "Anda belum melakukan absen masuk!",
+            })
+        }
+
         if (check && check.out == null) {
 
             await prisma.attendances.update({
