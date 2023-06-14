@@ -1,0 +1,40 @@
+{
+  "name": "api-attendance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./bin/www"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasaynaf/api-attendace.git"
+  },
+  "author": "hafidz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasaynaf/api-attendace/issues"
+  },
+  "homepage": "https://github.com/hasaynaf/api-attendace#readme",
+  "dependencies": {
+    "@prisma/client": "^4.15.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "rotating-file-stream": "^3.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.15.0"
+  }
+}
